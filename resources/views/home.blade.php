@@ -10,5 +10,5 @@
         	<li>Add bootstrap and jQuery to layouts.wrapper</li>
         </ul>
     </div>
-	<?php error_log("test test test test test test"); ?>
+	<?php error_log("error_logging is set up"); ?>
 @stop
