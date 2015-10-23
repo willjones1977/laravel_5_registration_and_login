@@ -16,9 +16,6 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('home', function(){
 		return view('home');
 	});
-	Route::get('otherhome', function(){
-		echo "Other home route called";
-	});
 	Route::get('todo', function(){
 		return view('todo');
 	});
