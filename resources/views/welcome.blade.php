@@ -2,6 +2,6 @@
 
    
 @section('content')
-        
+      
         
 @stop
