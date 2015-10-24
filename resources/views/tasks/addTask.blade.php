@@ -26,9 +26,10 @@
 			<label>Task Description</label><br>
 			<textarea name="taskDescription" style=" width: 100%; height: 150px;"></textarea>
 	    </div>
-	    <button>Add Task</button>
+	    <div>
+	    	<button class="btn btn-primary" style="float: right">Add Task</button>
+	    	<div style="clear: both"></div>
+	    </div>
 	{!! Form::close() !!}
         
-	<pre style="margin-top: 10px">tasks/addtask.blade.php</pre>
 @stop
-<?php error_log("showAddTask view loaded successfully"); ?>
