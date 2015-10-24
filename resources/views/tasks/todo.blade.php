@@ -36,13 +36,13 @@
                 <th>Task</th>
                 <th><span style="white-space: nowrap">Due Date/Time</span></th>
                 <?php   foreach($tasks as $task):  ?> 
-                            <tr>
+                            <tr style="border-bottom: 1px dashed #ccc">
                                 <!-- Task Creater -->
-                                    <td valign="top">
+                                    <td valign="top" style="width: 20%">
                                         <?= $task['task_creater']; ?>
                                     </td>
                                 <!-- Task Description -->
-                                    <td>
+                                    <td valign="top" style="width: 60%;">
                                         <?= $task['description']; ?></span>
                                     </td>
                                 <!-- Task Due Date/Time -->

@@ -7,7 +7,7 @@ use App\Tasks\Tasks;
 class TasksController extends Controller{
 	public function showAllUncompletedTasksAssignedToUser(){
 		$tasks = Tasks::where('completed_date_time',  '0000-00-00 00:00:00')
-					  ->where('task_recipient', \Auth::user()->name )->paginate(3);
+					  ->where('task_recipient', \Auth::user()->name )->paginate(5);
 		return view('tasks.todo')->with('tasks', $tasks);		
 	
 
