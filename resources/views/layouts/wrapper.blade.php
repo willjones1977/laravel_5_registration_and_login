@@ -42,6 +42,8 @@
 		<div class="container">
 			<div class="">
             <?php   if(Auth::check() ): ?>
+                        @include('auth.loggedInInfo')
+
                         <a href="/auth/logout" style="float: right">Logout</a>
 
                         <a href="home" style="float: right; padding-right: 10px;">Home</a>
