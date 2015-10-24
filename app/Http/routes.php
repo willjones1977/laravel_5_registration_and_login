@@ -31,9 +31,10 @@
 			return view('home');
 		});
 		// Tasks Routes
-			Route::get('todo', 			'TasksController@showTasks');
-			Route::get('showAddTask', 	'TasksController@showAddTask');
-			Route::post('addTask', 		'TasksController@addTask');
+			Route::get('todo', 				'TasksController@showTasks');
+			Route::get('showAddTask', 		'TasksController@showAddTask');
+			Route::post('addTask', 			'TasksController@addTask');
+			Route::post('markTaskComplete', 'TasksController@markTaskComplete' );
 	});
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 

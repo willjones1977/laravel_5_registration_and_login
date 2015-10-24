@@ -6,7 +6,8 @@ use App\Tasks\Tasks;
 
 class TasksController extends Controller{
 	public function showTasks(){
-		$tasks = Tasks::all();
+		$tasks = Tasks::where('completed_date_time',  '0000-00-00 00:00:00')
+					  ->where('task_recipient', \Auth::user()->name )->get();
 		return view('tasks.todo')->with('tasks', $tasks);		
 	}
 	public function showAddTask(){
@@ -15,7 +16,6 @@ class TasksController extends Controller{
 	}
 	public function addTask(){
 		$postedTask = \Input::all();
-		error_log(print_r($postedTask, true));
 		$taskRecipient = \Input::get('taskRecipient');
 		$dueDate = \Input::get('dueDate');
 		$taskDescription = \Input::get('taskDescription');
@@ -26,6 +26,16 @@ class TasksController extends Controller{
 		$newTask->task_creater   = $user = \Auth::user()->name;
 		$newTask->save();
 		return view('tasks.addTask');	
+	}
+	public function markTaskComplete(){
+		$taskId = \Input::get('taskid');
+		echo $taskId;
+		$taskToUpdate = Tasks::where('id', $taskId )->first();
+		$taskToUpdate->completed_date_time = date('Y-m-d H:i:s');
+		$taskToUpdate->save();
+		$tasks = Tasks::where('completed_date_time',  '0000-00-00 00:00:00')
+					  ->where('task_recipient', \Auth::user()->name )->get();
+		
 	}
 
 }
