@@ -10,24 +10,46 @@
                 /*padding-right: 3px;*/
             }
             td{
-        		border: 1px solid #ccc;
+        		/*border: 1px solid #ccc;*/
                 padding-left: 3px;
                 padding-right: 3px;
         	}
+            div{
+              /*  border: 1px dashed;*/
+            }
         </style>
-
-
-        <span style="font-size: 1.5em">TO DO:</span>
-        	<table>
-        		<th>From</th>
-        		<th>Description</th>
-                <th>Due Date/Time</th>
-	        	<?php 	foreach($tasks as $task):  ?> 
-        					<tr>
-	        					<td><?= $task['task_creater']; ?></td>
-        						<td><?= $task['description']; ?></td>
-        						<td><?= $task['due_date_time']; ?></td>
-        						<!-- Complete Task Button -->
+        
+        <div style="">
+            <div style="display: inline-block;font-size: 1.5em;">
+                TO DO:
+            </div>
+            <div style="display: inline-block; float: right">
+            
+                {!! $tasks->render() !!}
+            </div>
+            <div style="clear: both"></div>
+        </div>
+        <br>
+        <div>
+            <table style="width: 100%">
+                <th><span style="white-space: nowrap">Assigned By</span></th>
+                <th>Task</th>
+                <th><span style="white-space: nowrap">Due Date/Time</span></th>
+                <?php   foreach($tasks as $task):  ?> 
+                            <tr>
+                                <!-- Task Creater -->
+                                    <td valign="top">
+                                        <?= $task['task_creater']; ?>
+                                    </td>
+                                <!-- Task Description -->
+                                    <td>
+                                        <?= $task['description']; ?></span>
+                                    </td>
+                                <!-- Task Due Date/Time -->
+                                    <td>
+                                        <span style="white-space: nowrap"><?= $task['due_date_time']; ?></span>
+                                    </td>
+                                <!-- Complete Task Button -->
                                     <td>
                                         <div    class="completeTaskButton" 
                                                 title="Mark Task Complete"
@@ -37,10 +59,10 @@
                                             <span class="glyphicon glyphicon-remove" style="color: #a94442;"></span>
                                         </div>
                                     </td>
-        					</tr>
-	        	<?php 	endforeach; ?> 
-        	</table>
-        <pre style="margin-top: 10px">tasks/todo.blade.php</pre>
+                            </tr>
+                <?php   endforeach; ?> 
+            </table>
+        </div>
     </div>
 <!-- For Scripts to work.. they need to be inside of the blade template -->
     <script type="text/javascript">
@@ -57,5 +79,3 @@
         });
     </script>
 @stop
-
-<?php error_log("todo view loaded successfully"); ?>

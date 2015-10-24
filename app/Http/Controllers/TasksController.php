@@ -5,10 +5,19 @@ use App\Tasks\Tasks;
 // TasksController.php
 
 class TasksController extends Controller{
-	public function showTasks(){
+	public function showAllUncompletedTasksAssignedToUser(){
 		$tasks = Tasks::where('completed_date_time',  '0000-00-00 00:00:00')
-					  ->where('task_recipient', \Auth::user()->name )->get();
+					  ->where('task_recipient', \Auth::user()->name )->paginate(3);
 		return view('tasks.todo')->with('tasks', $tasks);		
+	
+
+
+
+
+
+
+
+
 	}
 	public function showAddTask(){
 		return view('tasks.addTask');		
