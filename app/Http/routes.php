@@ -31,10 +31,11 @@
 			return view('home');
 		});
 		// Protect Project Routes
-			Route::get('showProjects', 	 'ProjectsController@showAllUserProjects');
-			Route::get('showAddProject', 'ProjectsController@showAddProject');
-			Route::post('addProject', 	 'ProjectsController@addProject');
-			
+			Route::get('showProjects', 	 		'ProjectsController@showAllUserProjects');
+			Route::get('showAddProject', 		'ProjectsController@showAddProject');
+			Route::post('addProject', 	 		'ProjectsController@addProject');
+			Route::get('showProjectSummary/{routeid}', 	'ProjectsController@showProjectSummary');
+			// showProjectSummary
 		// Protected Tasks Routes
 			Route::get('todo', 				'TasksController@showAllUncompletedTasksAssignedToUser');
 			Route::get('showAddTask', 		'TasksController@showAddTask');

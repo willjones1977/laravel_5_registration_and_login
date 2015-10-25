@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Projects\Projects;
+use App\User;
 class ProjectsController extends Controller{
 	public function showAllUserProjects(){
 		$projects = Projects::where('project_completed_date', '0000-00-00 00:00:00')
@@ -13,9 +14,7 @@ class ProjectsController extends Controller{
 	} 
 	public function addProject(){
 		$allInput = \Input::all();
-		error_log( print_r(\Input::all(), true ));
 		$project = new Projects;
-
 		$project->project_creators_id  	= \Auth::user()->id;
 		$project->project_name 			= \Input::get('projectName');
 		$project->project_description	= \Input::get('projectDescription');
@@ -23,9 +22,11 @@ class ProjectsController extends Controller{
 		$project->project_due_date				= \Input::get('projectDueDate');
 		$project->project_recipient_id			= \Input::get('project_recipient_id');
 		$project->save();
-
-
-
 		return redirect('showProjects');
+	}
+	public function showProjectSummary($projectId){
+		$projectInfo = Projects::where('id', $projectId)->first();
+		$projectInfo->project_creator = User::where('id', $projectInfo->project_creators_id)->pluck('name');
+		return view('projects.projectSummary')->with('projectInfo', $projectInfo);		
 	}
 }

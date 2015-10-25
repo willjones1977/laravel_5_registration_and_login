@@ -42,7 +42,7 @@
                                     </td>
                                 <!-- Task Description -->
                                     <td valign="top" style="width: 60%;">
-                                        <?= $task['description']; ?></span>
+                                        <?= $task['description']; ?>
                                     </td>
                                 <!-- Task Due Date/Time -->
                                     <td>
