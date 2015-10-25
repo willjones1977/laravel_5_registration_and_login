@@ -46,8 +46,8 @@
 
                         <a href="/auth/logout" style="float: right">Logout</a>
 
-                        <a href="home" style="float: right; padding-right: 10px;">Home</a>
-                        <a href="todo" style="float: right; padding-right: 10px;">To Do</a>
+                        <a href="/home" style="float: right; padding-right: 10px;">Home</a>
+                        <a href="/todo" style="float: right; padding-right: 10px;">To Do</a>
                         <div style="clear: both"></div>
             <?php   else:   ?>
                         <a href="/auth/login" style="float: right">

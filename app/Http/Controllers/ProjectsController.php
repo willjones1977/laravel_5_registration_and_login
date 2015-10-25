@@ -2,11 +2,14 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Projects\Projects;
+use App\Tasks\Tasks;
+
 use App\User;
 class ProjectsController extends Controller{
 	public function showAllUserProjects(){
 		$projects = Projects::where('project_completed_date', '0000-00-00 00:00:00')
 							->where('project_recipient_id', \Auth::user()->id)->paginate(1);
+
 		return view('projects.showProjects')->with('projects', $projects);
 	}
 	public function showAddProject(){
@@ -27,6 +30,10 @@ class ProjectsController extends Controller{
 	public function showProjectSummary($projectId){
 		$projectInfo = Projects::where('id', $projectId)->first();
 		$projectInfo->project_creator = User::where('id', $projectInfo->project_creators_id)->pluck('name');
+		// Get tasks associated with the project
+		$projectInfo->tasks = Tasks::where('project_id', $projectId )
+								   ->where('completed_date_time', '0000-00-00 00:00:00')->get();
+
 		return view('projects.projectSummary')->with('projectInfo', $projectInfo);		
 	}
 }
