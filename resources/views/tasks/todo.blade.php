@@ -7,7 +7,6 @@
         <style type="text/css">
         	th{
                 padding: 6px;
-                /*padding-right: 3px;*/
             }
             td{
         		/*border: 1px solid #ccc;*/
@@ -21,7 +20,7 @@
         
         <div style="">
             <div style="display: inline-block;font-size: 1.5em;">
-                TO DO:
+                To do:
             </div>
             <div style="display: inline-block; float: right">
             
