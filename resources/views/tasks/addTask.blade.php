@@ -6,6 +6,18 @@
 	{!! Form::open(array('url' => 'addTask')) !!}
 	    <div class="" style="margin-top: 20px;">
 			<table>
+				<!-- Project -->
+					<tr>
+						<td style="padding: 3px;">Project</td>	
+						<td style="padding: 3px;">
+							<select style="width: 100%; height: 26px" name="project">
+								<option>select project</option>
+									<?php 	foreach($availableProjects as $availableProject): ?>
+												<option value="<?= $availableProject->id; ?>"><?= $availableProject->project_name;  ?></option>
+									<?php 	endforeach; ?>
+							</select>
+						</td>	
+					</tr>
 				<tr>
 					<!-- Task Recipient -->
 					<td style="padding: 3px;">Task Recipient&nbsp;</td>
