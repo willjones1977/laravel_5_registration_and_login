@@ -40,7 +40,12 @@
                                     </td>
                                 <!-- Project Description -->
                                     <td valign="top" style="width: 60%;">
-                                        <?= $project['project_description']; ?></span>
+                                        <span title="Project ID: <?= $project['id']; ?>">
+	                                       <a href="showProjectSummary/<?= $project['id']; ?>">
+	                                       <!-- //<a href="">test</a>-->
+		                                        <?= $project['project_description']; ?>
+	                                        </a>
+                                        </span>
                                     </td>
                                 <!-- Project Due Date/Time -->
                                     <td>
