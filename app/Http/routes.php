@@ -30,6 +30,8 @@
 		Route::get('home', function(){
 			return view('home');
 		});
+		// Protect Project Routes
+			Route::get('showProjects', 'ProjectsController@showAllUserProjects');
 		// Protected Tasks Routes
 			Route::get('todo', 				'TasksController@showAllUncompletedTasksAssignedToUser');
 			Route::get('showAddTask', 		'TasksController@showAddTask');
