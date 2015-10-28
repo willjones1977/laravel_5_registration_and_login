@@ -5,11 +5,11 @@
 	@include('projects.nav-projects')
 	<style type="text/css">
         	th{
-                padding: 6px;
+                padding-right: 6px;
             }
             td{
         		/*border: 1px solid #ccc;*/
-                padding-left: 3px;
+               /* padding-left: 3px;*/
                 padding-right: 3px;
         	}
             div{
@@ -29,14 +29,20 @@
         </div> 
         <br>
         <table style="width: 100%">
-                <th><span style="white-space: nowrap">Assigned By</span></th>
+                <th><span style="white-space: nowrap">Project</span></th>
+                <th><span style="white-space: nowrap">Created By</span></th>
                 <th>Project</th>
                 <th><span style="white-space: nowrap">Due Date/Time</span></th>
                 <?php   foreach($projects as $project):  ?> 
                             <tr style="border-bottom: 1px dashed #ccc">
+                                <!-- Project Name -->
+                                    <td valign="top" style="width: 20%">
+                                        <?= $project['project_name']; ?>   
+                                    </td>
                                 <!-- Project Creater -->
                                     <td valign="top" style="width: 20%">
-                                        <?= $project['project_creators_id']; ?>
+                                        <?= $user =  $project->user->name; ?>
+                                       
                                     </td>
                                 <!-- Project Description -->
                                     <td valign="top" style="width: 60%;">
@@ -65,5 +71,5 @@
                 <?php   endforeach; ?> 
             </table>			
 	</div>
-showProjects.blade.php
+
 @stop
