@@ -42,48 +42,48 @@
         <div id="projectAttributes" class="box-body" style="">
         	<table>
 					<tr>
-						<td><span class="summaryLabel">name</span></td>
-						<td><?=  $projectInfo->project_name; ?></td>
+						<td valign="top"><span class="summaryLabel">name</span></td>
+						<td valign="top"><?=  $projectInfo->project_name; ?></td>
 					</tr>
 					<tr>
-						<td><span class="summaryLabel">created by</span></td>
-						<td><?=  $projectInfo->project_creator; ?></td>
+						<td valign="top"><span class="summaryLabel">created by</span></td>
+						<td valign="top"><?=  $projectInfo->project_creator; ?></td>
 					</tr>
 					<tr>
-						<td>
+						<td valign="top">
 							<span class="summaryLabel">created</span>
 						</td>
-						<td>
+						<td valign="top">
 							<?=  $projectInfo->project_created_date; ?>
 						</td>
 						
 					</tr>
 					<tr>
-						<td>
+						<td valign="top">
 							<span class="summaryLabel">due</span>
 						</td>
-						<td>
+						<td valign="top">
 							<?=  $projectInfo->project_due_date; ?>
 							
 						</td>
 
 					</tr>
 					<tr>
-						<td><span class="summaryLabel">description</span></td>
-						<td><?=  $projectInfo->project_description; ?></td>
+						<td valign="top"><span class="summaryLabel">description</span></td>
+						<td valign="top"><?=  $projectInfo->project_description; ?></td>
 					</tr>
 			</table>
         </div>
-
+		
         <div class="box-header" style="display: inline-block;font-size: 1.2em;">Tasks</div>
         <div id="projectTasks" class="box-body" style="">
 			<table>
 				<?php 	foreach($projectInfo->tasks as $projectTask): ?>
 							<tr>
-								<td style="border: 1px solid #ccc">&bull;</td>
-								<td style="border: 1px solid #ccc"><?= $projectTask->description ?></td>
+								<td valign="top" style="border-bottom: 1px dashed #ccc;">&bull;</td>
+								<td valign="top" style="border-bottom: 1px dashed #ccc;"><?= $projectTask->description ?></td>
 								<!-- Complete Task Button -->
-									<td style="border: 1px solid #ccc">
+									<td valign="top" style="border-bottom: 1px dashed #ccc;">
 										<div 	class="completeTaskButton" 
 	                                            title="Mark Task Complete"
 	                                            data-taskid="<?= $projectTask->id; ?>"

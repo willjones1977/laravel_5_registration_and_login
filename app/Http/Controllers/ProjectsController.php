@@ -8,7 +8,7 @@ use App\User;
 class ProjectsController extends Controller{
 	public function showAllUserProjects(){
 		$projects = Projects::where('project_completed_date', '0000-00-00 00:00:00')
-							->where('project_recipient_id', \Auth::user()->id)->paginate(1);
+							->where('project_recipient_id', \Auth::user()->id)->paginate(4);
 
 		return view('projects.showProjects')->with('projects', $projects);
 	}
