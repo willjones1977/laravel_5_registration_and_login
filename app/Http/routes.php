@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -31,10 +30,15 @@
 			return view('home');
 		});
 		// Protect Project Routes
-			Route::get('showProjects', 	 		'ProjectsController@showAllUserProjects');
-			Route::get('showAddProject', 		'ProjectsController@showAddProject');
-			Route::post('addProject', 	 		'ProjectsController@addProject');
+			Route::get('showProjects', 	 				'ProjectsController@showAllUserProjects');
+			Route::get('showAddProject', 				'ProjectsController@showAddProject');
+			Route::post('addProject', 	 				'ProjectsController@addProject');
 			Route::get('showProjectSummary/{routeid}', 	'ProjectsController@showProjectSummary');
+			Route::post('saveProjectTask', 				'TasksController@addTask');
+			// Load users assigned and not assigned to a task
+			Route::post('getUsersAssignedAndNotAssigned', 'TasksController@getUsersAssignedAndNotAssigned');
+			// Set the users assigned to a task
+			Route::post('setUsersAssignedAndNotAssigned', 'TasksController@setUsersAssignedAndNotAssigned');
 			// showProjectSummary
 		// Protected Tasks Routes
 			Route::get('todo', 				'TasksController@showAllUncompletedTasksAssignedToUser');
