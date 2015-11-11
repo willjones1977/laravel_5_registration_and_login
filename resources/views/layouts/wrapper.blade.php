@@ -8,7 +8,9 @@
 		<!-- Bootstrap -->
 			<link href="{{	URL::asset('bootstrap-3.3.5-dist/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
 			<script type="text/javascript" src="{{ URL::asset('bootstrap-3.3.5-dist/js/bootstrap.js') }}"></script>
-
+        <!-- jQueryUI -->
+            <link href="{{  URL::asset('jqueryui/jquery-ui.css') }}" rel="stylesheet" type="text/css">
+            <script type="text/javascript" src="{{ URL::asset('jqueryui/jquery-ui.js') }}"></script>
 		<style>
             html, body {
                 height: 100%;
@@ -34,7 +36,7 @@
             }
 
             .title {
-                font-size: 36px;
+                font-size: 24px;
             }
         </style>
 	</head>
@@ -61,7 +63,7 @@
         </div>
 			<div class="">
 	            <div class="content" style="border-bottom: 2px solid">
-	                <div class="title">forum.home</div>
+	                <div class="title">process mgr</div>
 	           </div>
 	            
 	        </div>
